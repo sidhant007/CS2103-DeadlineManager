@@ -2089,6 +2089,21 @@ All unspecified fields of a task should be set to some value that does not match
    Expected: The task list is cleared and a new task is added to Deadline Manager with name: Weekly Task, deadline: 01/01/2018, priority: 0, frequency: 7, no tags and no attachments.
 .. Run the `complete 1` command. +
    Expected: The deadline of the task created above is modified to 08/01/2018.
+=======
+=== Completing a task
+ . Add a new task		 . Complete a non-recurring task
+ .. Run the `add n/New Program d/01/02/2018` command. +		 .. Run the `clear` command, followed by `add n/Simple Task d/01/01/2018` command. +
+    Expected: A new task is added to Deadline Manager with name: New Program, deadline: 01/02/2018, priority: 0, frequency: 0, no tags and no attachments.		    Expected: The task list is cleared and a new task is added to Deadline Manager with name: Simple Task, deadline: 01/01/2018, priority: 0, frequency: 0, no tags and no attachments.
+ .. Run the add n/New Program d/01/02/2018` command again. +		 .. Run the `complete 1` command. +
+    Expected: Another new task is added to Deadline Manager with the same parameters as (a) above.		    Expected: The task created above is deleted.
+
+=== Adding a task
+. Add a new task
+.. Run the `add n/New Program d/01/02/2018` command. +
+   Expected: A new task is added to Deadline Manager with name: New Program, deadline: 01/02/2018, priority: 0, frequency: 0, no tags and no attachments.
+.. Run the add n/New Program d/01/02/2018` command again. +
+   Expected: Another new task is added to Deadline Manager with the same parameters as (a) above.
+>>>>>>> Stashed changes
 
 === Exporting tasks
 . Export in XML format
